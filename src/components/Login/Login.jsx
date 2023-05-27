@@ -17,6 +17,7 @@ const Login = () => {
             return;
         }
         navigate('./userInfo');
+        localStorage.setItem('email', email);
     }
 
     return (

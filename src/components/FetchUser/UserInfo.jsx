@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react"
 import UserCardDetails from "./UserCardDetails";
 import './UserInfo.css';
@@ -40,12 +41,18 @@ const UserInfo = ({ isTableView }) => {
 
     const searchUserName = (e) => {
         setUserName(e.target.value);
-        let getName = usersData.filter(user => user.name.includes(userName));
-        setUsersData(getName);
+        let getName = usersData.filter(user => user.name.includes(e.target.value));
+
+        if(getName.length !== 0) {
+            setUsersData(getName);
+        }
+        if(e.target.value === "" ) {
+            fetchUsersData();
+        }
     }
 
     useEffect(() => {
-    }, [sortFlag])
+    }, [sortFlag, userName])
 
     useEffect(() => {
         fetchUsersData();
@@ -60,7 +67,6 @@ const UserInfo = ({ isTableView }) => {
 
             <button className="sort-name-btn" onClick={sortByName}>Sot By Name</button>
             <button className="sort-age-btn" onClick={sortByAge}>Sot By Age</button>
-
 
                 {userName.length > 0 && <div className="info-banner">You are viewing filtered results!</div>}
             <div className="user-container">
