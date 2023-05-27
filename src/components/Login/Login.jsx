@@ -27,14 +27,12 @@ const Login = () => {
                     <BsShieldLock style={{ fontSize: "2rem" }} />
                 </div>
                 <h2 className="user-heading">Login</h2>
-                {/* <label htmlFor="">Username</label> */}
                 <input
                     type="email"
                     placeholder="Username*"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                {/* <label htmlFor="">Password</label> */}
                 <input
                     type="password"
                     placeholder="Password*"
