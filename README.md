@@ -3,9 +3,13 @@
 2. Change directory. command:- cd coralMango-react-assignment
 3. Install dependency. command- npm install
 4. Install packages routes and react-icons.
-    command:-
+
+    commands:-
+ 
       a. Routes:- npm install react-router-dom.
+
       b. React Icons:- npm install react-icons.
+
 6. To run: npm run dev.
 
 # Login Page Credentials:-
