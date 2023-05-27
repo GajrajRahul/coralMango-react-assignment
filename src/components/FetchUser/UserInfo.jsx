@@ -43,12 +43,12 @@ const UserInfo = ({ isTableView }) => {
     const searchUserName = (e) => {
         let getName = usersData.filter(user => user.name.includes(e.target.value));
         setName(e.target.value);
-        
-        if(getName.length !== 0) {
+
+        if (getName.length !== 0) {
             setUserName(e.target.value);
             setUsersData(getName);
         }
-        if(e.target.value === "" ) {
+        if (e.target.value === "") {
             fetchUsersData();
         }
     }
@@ -64,37 +64,37 @@ const UserInfo = ({ isTableView }) => {
         <div>
             <div className='input-container'>
                 <input type='text' value={name} className='searchBar searchClass' placeholder='Search for User' onChange={searchUserName} />
-                <button className='searchButton searchClass'>Search</button>
             </div>
 
             <button className="sort-name-btn" onClick={sortByName}>Sot By Name</button>
             <button className="sort-age-btn" onClick={sortByAge}>Sot By Age</button>
 
-                {userName.length > 0 && <div className="info-banner">You are viewing filtered results!</div>}
-            <div className="user-container">
-                {isTableView ? <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Occupation</th>
+            {userName.length > 0 && <div className="info-banner">You are viewing filtered results!</div>}
+
+            {isTableView ? <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Occupation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {usersData.map((user, ind) => {
+                        return <tr key={ind}>
+                            <td>{user.name}</td>
+                            <td>{user.occupation}</td>
+                            <td>{user.age}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {usersData.map((user, ind) => {
-                            return <tr key={ind}>
-                                <td>{user.name}</td>
-                                <td>{user.occupation}</td>
-                                <td>{user.age}</td>
-                            </tr>
-                        })}
-                    </tbody>
-                </table> :
-                    usersData.map((user, ind) => {
+                    })}
+                </tbody>
+            </table> :
+                <div className="user-container">
+                    {usersData.map((user, ind) => {
                         return <UserCardDetails key={ind} user={user} />
-                    })
-                }
-            </div>
+                    })}
+                </div>
+            }
         </div>
     )
 }

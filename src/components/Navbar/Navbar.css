@@ -6,6 +6,7 @@ nav {
     padding: 0 10px;
     background-color: #e0d9d9;
     height: 50px;
+    width: 96vw;
 }
 
 .nav-bar {
@@ -53,6 +54,19 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+
+@media (max-width: 310px) {
+  nav {
+    display: block;
+    width: 200px;
+    height: 100px;
+  }
+
+  .nav-item {
+    margin: 0px;
+  }
 }
 
 /*

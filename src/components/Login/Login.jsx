@@ -12,7 +12,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!email.includes('@coralmango.com') || password !== "demo123" ) {
+        if(!email.includes('demo@coralmango.com') || password !== "demo123" ) {
             setLoginError('Invalid Credentials!');
             return;
         }
