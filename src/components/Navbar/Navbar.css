@@ -1,0 +1,64 @@
+nav {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: #e0d9d9;
+    height: 50px;
+}
+
+.nav-bar {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 5px;
+  color: #333;
+}
+
+.nav-item:hover {
+    background-color: #ada5a5;
+}
+
+.view-toggle {
+  text-align: center;
+  margin-right: 20px;
+}
+
+.view-toggle-btn {
+    background-color: #e0d9d9;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+}
+
+.view-toggle-btn:hover {
+    background-color: #ada5a5;
+}
+
+.table-view {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*
+.navbar li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+*/
