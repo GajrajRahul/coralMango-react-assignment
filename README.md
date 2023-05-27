@@ -20,7 +20,7 @@ To login enter following username and password value.
   Password: demo123
 
 # ES6 Basic Assignment:-
-ES6 Basic assignment question solutions are in answer folder.
+ES6 Basic assignment question solutions are in answers folder.
 
 
 
