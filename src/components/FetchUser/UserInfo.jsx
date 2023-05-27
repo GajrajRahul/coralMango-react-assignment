@@ -7,6 +7,7 @@ const UserInfo = ({ isTableView }) => {
     const [usersData, setUsersData] = useState([]);
     const [sortFlag, setSortFlag] = useState(false);
     const [userName, setUserName] = useState("");
+    const [name, setName] = useState("");
 
     const fetchUsersData = async () => {
         let url = "https://coralmango.com/api/react-test";
@@ -40,10 +41,11 @@ const UserInfo = ({ isTableView }) => {
     }
 
     const searchUserName = (e) => {
-        setUserName(e.target.value);
         let getName = usersData.filter(user => user.name.includes(e.target.value));
-
+        setName(e.target.value);
+        
         if(getName.length !== 0) {
+            setUserName(e.target.value);
             setUsersData(getName);
         }
         if(e.target.value === "" ) {
@@ -61,7 +63,7 @@ const UserInfo = ({ isTableView }) => {
     return (
         <div>
             <div className='input-container'>
-                <input type='text' value={userName} className='searchBar searchClass' placeholder='Search for User' onChange={searchUserName} />
+                <input type='text' value={name} className='searchBar searchClass' placeholder='Search for User' onChange={searchUserName} />
                 <button className='searchButton searchClass'>Search</button>
             </div>
 
